@@ -23,7 +23,7 @@ class Db    //2. Улучшаем класс Db.
         }
     }
 
-    public function execute( string $query, array $params = [] ) //2.3 Добавляем метод execute( $query, $params = [] )
+    public function execute( string $query, array $params = [] ) //2.3 Добавляем описание метода execute( $query, $params = [] )
     {
         $sth = $this->dbh->prepare($query);
 

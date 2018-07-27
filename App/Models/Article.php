@@ -18,7 +18,6 @@ class Article extends Model //5. Создаём класс Article
     {
         $db = new Db();
         $sql = 'SELECT * FROM ' . static::$table . ' ORDER BY id DESC LIMIT ' . $lim;
-        //var_dump($sql);
 
         return $db->query( $sql, static::class );
     }
