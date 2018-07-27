@@ -5,17 +5,16 @@
     <title>Новость</title>
 </head>
 <body>
-<h1>PHP-2</h1>
-<h2>1 урок</h2>
-<h2>Модели данных и ООП</h2>
-<h4>Домашняя работа</h4>
-<h2>Новости</h2>
+    <h1>PHP-2</h1>
+    <h2>1 урок</h2>
+    <h2>Модели данных и ООП</h2>
+    <h4>Домашняя работа</h4>
+    <h2>Новости</h2>
 
-<h3><?php echo $new->header; ?></h3>
-
-<article><?php echo $new->article; ?></article>
-<p>Автор: <?php echo $new->author; ?></p>
-<br><br>
-<a href="/index.php">Все новости</a>
+    <h3><?php echo $article->getHeader(); ?></h3>
+    <article><?php echo $article->getText(); ?></article>
+    <p>Автор: <?php echo $article->getAuthor(); ?></p>
+    <br><br>
+    <a href="/index.php">Все новости</a>
 </body>
 </html>

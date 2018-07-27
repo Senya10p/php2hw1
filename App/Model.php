@@ -1,37 +1,32 @@
 <?php
 
-
 namespace App;
-
 
 abstract class Model
 {
     public $id; //публичное свойство id полагая, что во всех таблицах есть id
-    protected static $table = null; //статическое св-во
 
-    //abstract public function getModelName(); //обязывает в классах наследниках объявить этот метод, но уже конкретно!
+    protected static $table = null; //статическое св-во
 
     public static function findAll()
     {
         $db = new Db();
-
         $sql = 'SELECT * FROM ' . static::$table;
-        return $db->query($sql, static::class); //Используем статическое свойство
+
+        return $db->query( $sql, static::class ); //Используем статическое свойство
     }
 
     public static function findBiId($id) //4. Добавляем метод, который возвращает либо одну запись по id, либо false
     {
         $db = new Db();
-
-        $sql = 'SELECT * FROM ' . static::$table . ' WHERE id=:id ';
-        //var_dump($sql);
+        $sql = 'SELECT * FROM ' . static::$table . ' WHERE id=:id';
         $data = $db->query( $sql, static::class, [':id' => $id] );
 
-        if ( false === $data || empty($data) ) {
+        if ( !isset( $data[0] ) ) {
 
             return false;
         }
+
         return $data[0];
     }
-
 }

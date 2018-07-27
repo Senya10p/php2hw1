@@ -1,12 +1,9 @@
 <?php
 
-//phpinfo(); // выводит всю информацию в таблице о PHP и всех библиотеках
+//Главная страница
 
 require __DIR__ . '/autoload.php';
 
-
-$data = \App\Models\Article::findArticles(); //Двойное двоеточие - признак статического вызова!
-
-//var_dump($data);
+$data = \App\Models\Article::findLastArticles(3); //Получаем последние 3х статьи из новостей
 
 include __DIR__ . '/templates/index.php';

@@ -1,30 +1,41 @@
 <?php
 
-
 namespace App\Models;
-
 
 use App\Db;
 use App\Model;
 
-class Article extends Model //5. Создаём модель Article
+class Article extends Model //5. Создаём класс Article
 {
 
-    public $header;
-    public $article;
-    public $author;
+    protected $header;
+    protected $text;
+    protected $author;
 
-    protected static $table = 'news'; //используем защищённое статическое свойство
+    protected static $table = 'news'; //используем описание защищённого статического свойства
 
-
-    public static function findArticles() //создаём метод для поиска 3-х последних записей из таблицы news
+    public static function findLastArticles(int $lim) //создаём описание метода для поиска последних записей из таблицы news
     {
         $db = new Db();
-        $sql = 'SELECT * FROM ' . static::$table . ' ORDER BY id DESC LIMIT 3';
+        $sql = 'SELECT * FROM ' . static::$table . ' ORDER BY id DESC LIMIT ' . $lim;
         //var_dump($sql);
 
-        return $db->query( $sql, static::class, [] );
+        return $db->query( $sql, static::class );
+    }
+
+    public function getHeader()
+    {
+        return $this->header;
+    }
+
+    public function getText()
+    {
+        return $this->text;
+    }
+
+    public function getAuthor()
+    {
+        return $this->author;
     }
 
 }
-

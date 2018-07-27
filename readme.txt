@@ -20,30 +20,30 @@ CREATE TABLE news (id SERIAL, header VARCHAR(50), article TEXT, author VARCHAR(1
 Добавляем в таблицу news записи.
 1 запись:
 INSERT INTO news
-(header, article, author)
+(header, text, author)
 VALUE
 ('Заголовок 1', 'Статья 1', 'Иван');
 
 2 запись:
 INSERT INTO news
-(header, article, author)
+(header, text, author)
 VALUE
 ('Заголовок 2', 'Статья 2', 'Андрей');
 
 3 запись:
 INSERT INTO news
-(header, article, author)
+(header, text, author)
 VALUE
 ('Заголовок 3', 'Статья 3', 'Анна');
 
 4 запись:
 INSERT INTO news
-(header, article, author)
+(header, text, author)
 VALUE
 ('Заголовок 4', 'Статья 4', 'Мария');
 
 
-Создали модель Article для получения данных. Добавили метод findArticles() для поиска последних 3х статей.
+Создали модель Article для получения данных. Добавили метод findLastArticles() для поиска последних 3х статей.
 Для передачи данных в шаблон используем include файла с шаблоном.
 
 6. Заголовок каждой новости является ссылкой на страницу /article.php?id=NNN, где NNN - номер этой новости. 

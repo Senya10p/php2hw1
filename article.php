@@ -6,12 +6,12 @@ require __DIR__ . '/autoload.php';
 
 if ( isset($_GET['id']) ) { //проверяем на существование
 
-    $new = \App\Models\Article::findBiId( $_GET['id'] );
+    $article = \App\Models\Article::findBiId( $_GET['id'] );
 
-    if ( false === $new ) { //если новости с таким id не существует
+    if ( false === $article ) { //если новости с таким id не существует
+
         die ( 'Такой новости не существует' );
     }
 
-    //var_dump($new);
     include __DIR__ . '/templates/article.php';
 }
