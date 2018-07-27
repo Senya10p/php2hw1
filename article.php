@@ -6,7 +6,7 @@ require __DIR__ . '/autoload.php';
 
 if ( isset($_GET['id']) ) { //проверяем на существование
 
-    $article = \App\Models\Article::findBiId( $_GET['id'] );
+    $article = \App\Models\Article::findById( $_GET['id'] );
 
     if ( false === $article ) { //если новости с таким id не существует
 
