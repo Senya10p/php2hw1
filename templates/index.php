@@ -14,7 +14,7 @@
     <?php
     foreach ( $data as $article ) {
         ?>
-        <a href="/article.php?id=<?php echo $article->id; ?>"><h3><?php echo $article->getHeader(); ?></h3></a>
+        <a href="/article.php?id=<?php echo $article->getId(); ?>"><h3><?php echo $article->getHeader(); ?></h3></a>
         <p><?php echo $article->getText(); ?></p>
         <hr>
     <?php } ?>
