@@ -15,7 +15,7 @@ class Db    //2. Улучшаем класс Db.
     {
         $sth = $this->dbh->prepare($sql);
 
-        if ( false !== $sth ) {
+        if (false !== $sth) {
             if ( $sth->execute($data) ) {
 
                 return $sth->fetchAll( \PDO::FETCH_CLASS, $class );
@@ -27,7 +27,7 @@ class Db    //2. Улучшаем класс Db.
     {
         $sth = $this->dbh->prepare($query);
 
-        if ( false !== $sth ) {
+        if (false !== $sth) {
 
             return $sth->execute($params);
         }

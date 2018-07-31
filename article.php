@@ -8,9 +8,9 @@ if ( isset($_GET['id']) ) { //проверяем на существование
 
     $article = \App\Models\Article::findById( $_GET['id'] );
 
-    if ( false === $article ) { //если новости с таким id не существует
+    if (false === $article) { //если новости с таким id не существует
 
-        die ( 'Такой новости не существует' );
+        die ('Такой новости не существует');
     }
 
     include __DIR__ . '/templates/article.php';
