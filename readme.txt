@@ -20,27 +20,27 @@ CREATE TABLE news (id SERIAL, header VARCHAR(50), article TEXT, author VARCHAR(1
 Добавляем в таблицу news записи.
 1 запись:
 INSERT INTO news
-(header, text, author)
+(header, text)
 VALUE
-('Заголовок 1', 'Статья 1', 'Иван');
+('Заголовок 1', 'Статья 1');
 
 2 запись:
 INSERT INTO news
-(header, text, author)
+(header, text)
 VALUE
-('Заголовок 2', 'Статья 2', 'Андрей');
+('Заголовок 2', 'Статья 2');
 
 3 запись:
 INSERT INTO news
-(header, text, author)
+(header, text)
 VALUE
-('Заголовок 3', 'Статья 3', 'Анна');
+('Заголовок 3', 'Статья 3');
 
 4 запись:
 INSERT INTO news
-(header, text, author)
+(header, text)
 VALUE
-('Заголовок 4', 'Статья 4', 'Мария');
+('Заголовок 4', 'Статья 4');
 
 
 Создали модель Article для получения данных. Добавили метод findLastArticles() для поиска последних 3х статей.
