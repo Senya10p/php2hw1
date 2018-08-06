@@ -13,7 +13,6 @@
 
     <h3><?php echo $article->getHeader(); ?></h3>
     <article><?php echo $article->getText(); ?></article>
-    <p>Автор: <?php echo $article->getAuthor(); ?></p>
     <br><br>
     <a href="/index.php">Все новости</a>
 </body>

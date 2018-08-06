@@ -10,7 +10,6 @@ class Article extends Model //5. Создаём класс Article
 
     protected $header;
     protected $text;
-    protected $author;
 
     protected static $table = 'news'; //используем описание защищённого статического свойства
 
@@ -30,11 +29,6 @@ class Article extends Model //5. Создаём класс Article
     public function getText()
     {
         return $this->text;
-    }
-
-    public function getAuthor()
-    {
-        return $this->author;
     }
 
 }
