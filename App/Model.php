@@ -17,7 +17,6 @@ abstract class Model
     {
         $db = new Db();
         $sql = 'SELECT * FROM ' . static::$table;
-
         return $db->query($sql, static::class); //Используем статическое свойство
     }
 
@@ -27,8 +26,7 @@ abstract class Model
         $sql = 'SELECT * FROM ' . static::$table . ' WHERE id=:id';
         $data = $db->query( $sql, static::class, [':id' => $id] );
 
-        if ( !isset($data[0]) ) {
-
+        if ( empty($data[0]) ) {
             return false;
         }
         return $data[0];
